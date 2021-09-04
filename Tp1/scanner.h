@@ -9,7 +9,7 @@ enum tokens{SEP,CAD,FDT};
 
 int get_token(char* buffer);
 bool esComa(char digito);
-bool esCAD(char digito);
-int obtenerLexema(char* buffer,int token);
+bool esCadena(char digito);
+int lexema(char* buffer,int token);
 
 #endif

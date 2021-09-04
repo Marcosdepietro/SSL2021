@@ -8,7 +8,7 @@ bool esComa(char digito){
    return valor;
 }
 
-bool esCAD(char digito){
+bool esCadena(char digito){
    bool valor = 0;
    if (!esComa(digito) && isspace(digito)== 0){
       valor = 1;
@@ -16,23 +16,21 @@ bool esCAD(char digito){
    return valor;
 }
 
-int obtenerLexema(char* buffer,int token){
+int lexema(char* buffer,int token){
    char digito = getchar();
    int posicion = 0;
 
    if(esComa(digito)){
-
    buffer[posicion] =  digito;
    token = SEP;
    }
    else{
-   while( esCAD(digito) ){
+   while( esCadena(digito) ){
       buffer[posicion] =  digito;
       posicion++;
       digito = getchar();
    }
    ungetc(digito,stdin);
-
    token = CAD;
    }
    return token;
@@ -49,7 +47,7 @@ int get_token(char* buffer){
 
     if(isspace(digito)==0){
        ungetc(digito,stdin);
-       valor = obtenerLexema(buffer,valor);
+       valor = lexema(buffer,valor);
     }
     return valor;
 }
