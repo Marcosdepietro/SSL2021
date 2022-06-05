@@ -1,0 +1,12 @@
+enum token{
+	FDT,
+	PROGRAMA,
+	ENTERO,
+	LEER,
+	ESCRIBIR,
+	FIN_PROGRAMA,
+	ASIGNACION,
+	IDENTIFICADOR,
+	CONSTANTE
+};
+typedef enum token TOKEN;
